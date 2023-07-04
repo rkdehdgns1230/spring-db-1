@@ -48,7 +48,7 @@ public class CheckedTest {
             }
         }
 
-        public void callThrow() throws MyCheckedException {
+        public void callThrow() throws Exception {
             repository.call();
         }
     }
