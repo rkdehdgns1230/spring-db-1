@@ -37,7 +37,6 @@ class MemberServiceV4Test {
     @RequiredArgsConstructor
     static class TestConfig{
         private final DataSource dataSource;
-        // transactionManager도 자동 등록 해줄 것이다.
         @Bean
         MemberRepository memberRepository(DataSource dataSource) {
             return new MemberRepositoryV4_1(dataSource);
@@ -103,5 +102,5 @@ class MemberServiceV4Test {
         Member findMemberEx = memberRepository.findById(memberEx.getMemberId());
         assertThat(findMemberA.getMoney()).isEqualTo(10000);
         assertThat(findMemberEx.getMoney()).isEqualTo(10000);
-
+    }
 }
